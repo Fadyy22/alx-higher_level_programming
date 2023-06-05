@@ -1,0 +1,5 @@
+#!/bin/bash
+python -c "import py_compile
+import os
+
+py_compile.compile(os.environ['PYFILE'])"
