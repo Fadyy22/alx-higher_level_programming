@@ -12,8 +12,8 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *temp;
-	int *list;
-	int *reverse_list;
+	int list[100];
+	int reverse_list[100];
 	int counter = 0;
 	int i;
 
@@ -28,8 +28,6 @@ int is_palindrome(listint_t **head)
 	}
 	temp = *head;
 
-	list = malloc(sizeof(int) * counter);
-	reverse_list = malloc(sizeof(int) * counter);
 	for (i = 0; i < counter; i++)
 	{
 		list[i] = temp->n;
@@ -41,7 +39,5 @@ int is_palindrome(listint_t **head)
 		if (list[i] != reverse_list[i])
 			return (0);
 	}
-	free(list);
-	free(reverse_list);
 	return (1);
 }
