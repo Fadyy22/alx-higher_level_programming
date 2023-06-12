@@ -13,7 +13,6 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *temp;
 	int list[100];
-	int reverse_list[100];
 	int counter = 0;
 	int i;
 
@@ -31,12 +30,11 @@ int is_palindrome(listint_t **head)
 	for (i = 0; i < counter; i++)
 	{
 		list[i] = temp->n;
-		reverse_list[counter - (i + 1)] = temp->n;
 		temp = temp->next;
 	}
 	for (i = 0; i < counter; i++)
 	{
-		if (list[i] != reverse_list[i])
+		if (list[i] != list[counter - (i + 1)])
 			return (0);
 	}
 	return (1);
