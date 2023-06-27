@@ -13,8 +13,6 @@ class Square:
         if self.__size == 0:
             rtr += "\n"
         else:
-            for i in range(self.position[1]):
-                rtr += "\n"
             for k in range(self.__size):
                 for j in range(self.position[0]):
                     rtr += " "
@@ -86,11 +84,18 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            for i in range(self.position[1]):
-                print()
             for k in range(self.__size):
                 for j in range(self.position[0]):
                     print(" ", end="")
                 for o in range(self.__size):
                     print("#", end="")
                 print()
+
+
+my_square = Square(5, (0, 0))
+print(my_square)
+
+print("--")
+
+my_square = Square(5, (4, 1))
+print(my_square)
