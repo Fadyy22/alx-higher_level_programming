@@ -13,12 +13,15 @@ class Square:
         if self.__size == 0:
             rtr += "\n"
         else:
+            for i in range(self.position[1]):
+                rtr += "\n"
             for k in range(self.__size):
                 for j in range(self.position[0]):
                     rtr += " "
                 for o in range(self.__size):
                     rtr += "#"
-                rtr += "\n"
+                if k is not self.__size - 1:
+                    rtr += "\n"
         return rtr
 
     def __init__(self, size=0, position=(0, 0)):
@@ -84,6 +87,8 @@ class Square:
         if self.__size == 0:
             print()
         else:
+            for i in range(self.position[1]):
+                print()
             for k in range(self.__size):
                 for j in range(self.position[0]):
                     print(" ", end="")
