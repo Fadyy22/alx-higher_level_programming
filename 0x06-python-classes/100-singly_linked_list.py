@@ -69,6 +69,7 @@ class SinglyLinkedList:
         self.__head = None
 
     def sorted_insert(self, value):
+        """inserts a new node in sorted order"""
         if type(value) != int:
             raise TypeError("data must be an integer")
         current = self.__head
@@ -82,18 +83,3 @@ class SinglyLinkedList:
             self.__head = new_node
         else:
             prev.next_node = new_node
-
-
-sll = SinglyLinkedList()
-sll.sorted_insert(2)
-sll.sorted_insert(5)
-sll.sorted_insert(3)
-sll.sorted_insert(10)
-sll.sorted_insert(1)
-sll.sorted_insert(-4)
-sll.sorted_insert(-3)
-sll.sorted_insert(4)
-sll.sorted_insert(5)
-sll.sorted_insert(12)
-sll.sorted_insert(3)
-print(sll)
