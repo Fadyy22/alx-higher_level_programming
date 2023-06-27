@@ -70,6 +70,7 @@ class SinglyLinkedList:
         if type(value) != int:
             raise TypeError("data must be an integer")
         current = self.__head
+        prev = current
         while current is not None:
             if current.data > value:
                 break
