@@ -11,7 +11,7 @@ class Square:
     def __str__(self):
         rtr = ""
         if self.__size == 0:
-            rtr += "\n"
+            return rtr
         else:
             for i in range(self.position[1]):
                 rtr += "\n"
