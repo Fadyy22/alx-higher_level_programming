@@ -5,9 +5,6 @@ to be used in a single linked list
 """
 
 
-from types import new_class
-
-
 class Node:
     """node of a single linked list"""
 
@@ -73,7 +70,6 @@ class SinglyLinkedList:
         if type(value) != int:
             raise TypeError("data must be an integer")
         current = self.__head
-        prev = Node(0)
         while current is not None:
             if current.data > value:
                 break
