@@ -44,22 +44,22 @@ class Square:
         return rtr
 
     def __lt__(self, other):
-        return self.__size < other.__size
+        return self.area() < other.area()
 
     def __le__(self, other):
-        return self.__size <= other.__size
+        return self.area() <= other.area()
 
     def __eq__(self, other):
-        return self.__size == other.__size
+        return self.area() == other.area()
 
     def __ne__(self, other):
-        return self.__size != other.__size
+        return self.area() != other.area()
 
     def __gt__(self, other):
-        return self.__size > other.__size
+        return self.area() > other.area()
 
     def __ge__(self, other):
-        return self.__size >= other.__size
+        return self.area() >= other.area()
 
     @property
     def size(self):
@@ -113,3 +113,20 @@ class Square:
                 for o in range(self.__size):
                     print("#", end="")
                 print()
+
+
+s_5 = Square(5)
+s_6 = Square(6)
+
+if s_5 < s_6:
+    print("Square 5 < Square 6")
+if s_5 <= s_6:
+    print("Square 5 <= Square 6")
+if s_5 == s_6:
+    print("Square 5 == Square 6")
+if s_5 != s_6:
+    print("Square 5 != Square 6")
+if s_5 > s_6:
+    print("Square 5 > Square 6")
+if s_5 >= s_6:
+    print("Square 5 >= Square 6")
