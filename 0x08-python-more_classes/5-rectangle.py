@@ -2,9 +2,6 @@
 """rectangle class"""
 
 
-from ast import Del
-
-
 class Rectangle:
     """an empty class Rectangle that defines a rectangle"""
 
