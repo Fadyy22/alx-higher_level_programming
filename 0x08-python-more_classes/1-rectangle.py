@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""RECTANGLE"""
+"""rectangle class"""
 
 
 class Rectangle:
-    """rectangle"""
+    """an empty class Rectangle that defines a rectangle"""
 
     def __init__(self, width=0, height=0):
         if type(width) != int:
@@ -19,11 +19,13 @@ class Rectangle:
 
     @property
     def width(self):
+        """width getter to retrieve the width"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        if not isinstance(value, int):
+        """width setter to retrieve the width"""
+        if type(value) != int:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -31,11 +33,13 @@ class Rectangle:
 
     @property
     def height(self):
+        """height getter to retrieve the height"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        if not isinstance(value, int):
+        """height setter to retrieve the height"""
+        if type(value) != int:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
