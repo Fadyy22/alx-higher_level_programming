@@ -17,10 +17,13 @@ def matrix_divided(matrix, div):
         div (int) (float): dividend
 
     Returns:
-        int: the sum of 'a' and 'b'
+        matrix: a new matrix (matrix / div)
 
     Raises:
-        TypeError: if the type of 'a' or 'b' is not integer/float
+        TypeError: if matrix is not a list of lists of ints and floats
+        TypeError: if rows of the matrix are not the same size
+        TypeError: if div is not a number
+        ZeroDivisionError: if div is = 0
     """
     new_matrix = []
     new_list = []
