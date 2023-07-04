@@ -6,9 +6,6 @@ a module containing a matrix_divided function
 """
 
 
-from hmac import new
-
-
 def matrix_divided(matrix, div):
     """a function that divides all elements of a matrix
 
