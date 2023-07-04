@@ -6,9 +6,6 @@ a module containing an add_integer function
 """
 
 
-from audioop import add
-
-
 def add_integer(a, b=98):
     """a function that adds integers and/or floats
 
