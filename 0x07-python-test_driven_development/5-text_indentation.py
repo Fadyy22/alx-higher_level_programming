@@ -23,8 +23,11 @@ def text_indentation(text):
     for i in range(len(text)):
         if i == len(text) - 1:
             new_text += text[i]
-        elif text[i] == " " and text[i - 1] in (".", "?", ":"):
+        elif text[i] in (".", "?", ":"):
+            new_text += text[i]
             new_text += "\n\n"
+        elif text[i] == " " and text[i - 1] in (".", "?", ":"):
+            continue
         else:
             new_text += text[i]
     print(new_text, end="")
