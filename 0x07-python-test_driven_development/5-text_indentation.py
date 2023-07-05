@@ -21,12 +21,10 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     for i in range(len(text)):
-        if i == len(text) - 1:
-            new_text += text[i]
-        elif text[i] in (".", "?", ":"):
+        if text[i] in (".", "?", ":"):
             new_text += text[i]
             new_text += "\n\n"
-        elif text[i] == " " and text[i - 1] in (".", "?", ":"):
+        elif text[i] == " " and new_text[-3] in (".", "?", ":"):
             continue
         else:
             new_text += text[i]
