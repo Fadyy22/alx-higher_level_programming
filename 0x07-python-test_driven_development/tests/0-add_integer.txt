@@ -97,13 +97,19 @@ Adding string containing int and int:
     TypeError: a must be an integer
 
 Passing None:
-    >> add_integer(None)
+    >>> add_integer(None)
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
 
 Passing string:
-    >> add_integer("Hi")
+    >>> add_integer("Hi")
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
+
+Passing inf:
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    ...
+    TypeError: cannot convert float infinity to integer
