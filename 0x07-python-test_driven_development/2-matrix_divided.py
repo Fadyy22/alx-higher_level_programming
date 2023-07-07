@@ -40,7 +40,7 @@ def matrix_divided(matrix, div):
 
     for i in matrix:
         counter = 0
-        if matrix.index(matrix[counter]) == len(matrix) - 1:
+        if matrix.index(matrix[counter]) != len(matrix) - 1:
             if len(matrix[counter]) != len(matrix[counter + 1]):
                 raise TypeError(msg_2)
         for j in i:
