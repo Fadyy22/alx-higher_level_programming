@@ -114,8 +114,8 @@ Passing inf:
     ...
     OverflowError: cannot convert float infinity to integer
 
-Passing inf and -inf:
-    >>> add_integer(float('inf'), -float('inf'))
+Passing NaN:
+    >>> add_integer(5, float('NaN'))
     Traceback (most recent call last):
     ...
-    OverflowError: cannot convert float infinity to integer
+    ValueError: cannot convert float NaN to integer
