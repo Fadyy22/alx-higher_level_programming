@@ -84,3 +84,11 @@ Passing number in matrix:
     Traceback (most recent call last):
     ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+Not passing div:
+    >>> matrix = [[5, 4, 5], [6, 2, 1]]
+    >>> print(matrix_divided(matrix))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
