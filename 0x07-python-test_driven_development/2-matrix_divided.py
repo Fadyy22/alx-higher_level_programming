@@ -29,30 +29,23 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
-
+    msg_1 = "matrix must be a matrix (list of lists) of integers/floats"
+    msg_2 = "Each row of the matrix must have the same size"
     if type(matrix) is not list:
-        raise TypeError(
-                "matrix must be a matrix (list of lists) of integers/floats"
-            )
+        raise TypeError(msg_1)
 
     for i in matrix:
         if type(i) is not list:
-            raise TypeError(
-                "matrix must be a matrix (list of lists) of integers/floats"
-            )
+            raise TypeError(msg_1)
 
     for i in matrix:
         counter = 0
-        if matrix[counter + 1]:
+        if matrix.index(matrix[counter]) == len(matrix) - 1:
             if len(matrix[counter]) != len(matrix[counter + 1]):
-                raise TypeError(
-                    "Each row of the matrix must have the same size"
-                    )
+                raise TypeError(msg_2)
         for j in i:
             if type(j) is not int and type(j) is not float:
-                raise TypeError(
-                   "matrix must be a matrix (list of lists) of integers/floats"
-                )
+                raise TypeError(msg_1)
             new_list.append(round(j / div, 2))
         new_matrix.append(new_list)
         new_list = []
