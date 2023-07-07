@@ -113,3 +113,9 @@ Passing inf:
     Traceback (most recent call last):
     ...
     OverflowError: cannot convert float infinity to integer
+
+Passing inf and -inf:
+    >>> add_integer(float('inf'), -float('inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
