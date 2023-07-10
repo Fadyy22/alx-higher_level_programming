@@ -9,7 +9,7 @@ def is_same_class(obj, a_class):
 
     Args:
         obj: object to check
-        a_class: the class to check if 'obj' is instance from
+        a_class: the class to check if 'obj' is an instance from
 
     Return:
         True: if if the object is exactly an instance of the specified class
