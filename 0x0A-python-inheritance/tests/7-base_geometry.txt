@@ -21,6 +21,21 @@ Passing name and string value:
     ...
     TypeError: my_int must be an integer
 
+Passing name and list value:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("my_int", [1, 2, 4, 5])
+    Traceback (most recent call last):
+    ...
+    TypeError: my_int must be an integer
+
+Passing name and float value:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("my_int", 1.8)
+    Traceback (most recent call last):
+    ...
+    TypeError: my_int must be an integer
+
+
 Passing value less than 0:
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("my_int", -5)
