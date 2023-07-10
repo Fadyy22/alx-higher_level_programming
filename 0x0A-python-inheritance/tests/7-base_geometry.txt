@@ -10,6 +10,13 @@ Using "integer_validator function"
 Import function from the module:
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+Testing area():
+    >>> bg = BaseGeometry()
+    >>> bg.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
 Passing name and int value:
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("my_int", 12)
