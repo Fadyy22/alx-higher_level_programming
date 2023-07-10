@@ -35,6 +35,12 @@ Passing name and float value:
     ...
     TypeError: my_int must be an integer
 
+Passing name and inf value:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("my_int", float('inf'))
+    Traceback (most recent call last):
+    ...
+    TypeError: my_int must be an integer
 
 Passing value less than 0:
     >>> bg = BaseGeometry()
