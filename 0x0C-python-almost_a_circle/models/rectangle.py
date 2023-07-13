@@ -9,6 +9,14 @@ Base = __import__("base").Base
 class Rectangle(Base):
     """Rectangle class that inherits from Base class"""
 
+    def __str__(self):
+        id = self.id
+        x = self.x
+        y = self.y
+        width = self.width
+        height = self.height
+        return f"[Rectangle] ({id}) {x}/{y} - {width}/{height}"
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """Rectangle constructor"""
         super().__init__(id)
