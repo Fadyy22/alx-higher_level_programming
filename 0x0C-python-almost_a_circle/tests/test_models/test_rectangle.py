@@ -65,3 +65,38 @@ class RectangleTest(unittest.TestCase):
         rec = Rectangle(2, 4, 2, 1)
         rec.display()
         self.assertEqual(self.output.getvalue(), "\n  ##\n  ##\n  ##\n  ##\n")
+
+    def test_update_id(self):
+        rec = Rectangle(10, 10, 10, 10)
+        rec.update(89)
+        print(rec)
+        msg = "[Rectangle] (89) 10/10 - 10/10\n"
+        self.assertEqual(self.output.getvalue(), msg)
+
+    def test_update_width(self):
+        rec = Rectangle(10, 10, 10, 10)
+        rec.update(89, 15)
+        print(rec)
+        msg = "[Rectangle] (89) 10/10 - 15/10\n"
+        self.assertEqual(self.output.getvalue(), msg)
+
+    def test_update_height(self):
+        rec = Rectangle(10, 10, 10, 10)
+        rec.update(89, 15, 20)
+        print(rec)
+        msg = "[Rectangle] (89) 10/10 - 15/20\n"
+        self.assertEqual(self.output.getvalue(), msg)
+
+    def test_update_x(self):
+        rec = Rectangle(10, 10, 10, 10)
+        rec.update(89, 15, 20, 13)
+        print(rec)
+        msg = "[Rectangle] (89) 13/10 - 15/20\n"
+        self.assertEqual(self.output.getvalue(), msg)
+
+    def test_update_y(self):
+        rec = Rectangle(10, 10, 10, 10)
+        rec.update(89, 15, 20, 13, 11)
+        print(rec)
+        msg = "[Rectangle] (89) 13/11 - 15/20\n"
+        self.assertEqual(self.output.getvalue(), msg)
