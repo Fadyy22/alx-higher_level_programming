@@ -3,7 +3,7 @@
 """module containing rectangle class that inherits from Base class"""
 
 
-Base = __import__("base").Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -82,10 +82,11 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
-        for i in range(self.__height):
-            for j in range(self.__width):
-                print("#", end="")
+        print("\n" * self.y, end="")
+        for i in range(self.height):
+            print(" " * self.x, end="")
+            print("#" * self.width, end="")
             print()

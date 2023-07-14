@@ -14,3 +14,11 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @classmethod
+    def get_nb_objects(cls):
+        return cls.__nb_objects
+
+    @classmethod
+    def set_nb_objects(cls, value):
+        cls.__nb_objects = value
