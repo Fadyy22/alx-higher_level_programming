@@ -91,7 +91,7 @@ class Rectangle(Base):
             print("#" * self.width, end="")
             print()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         try:
             self.id = args[0]
             self.width = args[1]
@@ -100,3 +100,5 @@ class Rectangle(Base):
             self.y = args[4]
         except Exception:
             pass
+        for name in kwargs:
+            setattr(self, name, kwargs[name])
