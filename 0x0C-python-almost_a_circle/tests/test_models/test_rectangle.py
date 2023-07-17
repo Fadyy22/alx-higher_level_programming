@@ -5,8 +5,8 @@
 import unittest
 import sys
 from io import StringIO
-from models.base import Base
 from models.rectangle import Rectangle
+from models.base import Base
 
 
 class RectangleTest(unittest.TestCase):
@@ -66,39 +66,23 @@ class RectangleTest(unittest.TestCase):
         rec.display()
         self.assertEqual(self.output.getvalue(), "\n  ##\n  ##\n  ##\n  ##\n")
 
-    def test_args_update_id(self):
-        rec = Rectangle(10, 10, 10, 10)
-        rec.update(89)
-        print(rec)
-        msg = "[Rectangle] (89) 10/10 - 10/10\n"
-        self.assertEqual(self.output.getvalue(), msg)
-
-    def test_args_update_width(self):
-        rec = Rectangle(10, 10, 10, 10)
-        rec.update(89, 15)
-        print(rec)
-        msg = "[Rectangle] (89) 10/10 - 15/10\n"
-        self.assertEqual(self.output.getvalue(), msg)
-
-    def test_args_update_height(self):
-        rec = Rectangle(10, 10, 10, 10)
-        rec.update(89, 15, 20)
-        print(rec)
-        msg = "[Rectangle] (89) 10/10 - 15/20\n"
-        self.assertEqual(self.output.getvalue(), msg)
-
-    def test_args_update_x(self):
-        rec = Rectangle(10, 10, 10, 10)
-        rec.update(89, 15, 20, 13)
-        print(rec)
-        msg = "[Rectangle] (89) 13/10 - 15/20\n"
-        self.assertEqual(self.output.getvalue(), msg)
-
-    def test_args_update_y(self):
+    def test_args_update(self):
         rec = Rectangle(10, 10, 10, 10)
         rec.update(89, 15, 20, 13, 11)
         print(rec)
         msg = "[Rectangle] (89) 13/11 - 15/20\n"
         self.assertEqual(self.output.getvalue(), msg)
 
-        # TODO: tests for **kwargs
+    def test_kwargs_update(self):
+        rec = Rectangle(10, 10, 10, 10)
+        rec.update(id=13, x=15, y=12, width=5, height=8)
+        print(rec)
+        msg = "[Rectangle] (13) 15/12 - 5/8\n"
+        self.assertEqual(self.output.getvalue(), msg)
+
+    def test_to_dictionary(self):
+        rec = Rectangle(10, 2, 1, 9)
+        rec_dictionary = rec.to_dictionary()
+        print(rec_dictionary)
+        my_dect = "{'id': 1, 'width': 10, 'height': 2, 'x': 1, 'y': 9}\n"
+        self.assertEqual(self.output.getvalue(), my_dect)
