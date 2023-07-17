@@ -22,10 +22,10 @@ class RectangleTest(unittest.TestCase):
             rec = Rectangle(1.5, 15)
         with self.assertRaises(TypeError):
             rec = Rectangle(15, 1.5)
-        # with self.assertRaises(TypeError):
-        #     rec1 = Rectangle(15, 15, 1.3, 2)
-        # with self.assertRaises(TypeError):
-        #     rec1 = Rectangle(15, 15, 1, 2.1)
+        with self.assertRaises(TypeError):
+            rec1 = Rectangle(15, 15, 1.3, 2)  # type: ignore
+        with self.assertRaises(TypeError):
+            rec1 = Rectangle(15, 15, 1, 2.1)  # type: ignore
 
     def test_width_height_less_than_or_equal_zero(self):
         with self.assertRaises(ValueError):
