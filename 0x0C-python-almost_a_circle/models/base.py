@@ -32,7 +32,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         if list_dictionaries is None:
-            return []
+            return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -47,12 +47,12 @@ class Base:
     def from_json_string(json_string):
         return json.loads(json_string)
 
-    # @classmethod
-    # def create(cls, **dictionary):
-    #     if cls.__name__ == "Rectangle":
-    #         dummy = cls(1, 1)
-    #     else:
-    #         dummy = cls(11)
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        else:
+            dummy = cls(11)
 
-    #     dummy.update(**dictionary)
-    #     return dummy
+        dummy.update(**dictionary)
+        return dummy
