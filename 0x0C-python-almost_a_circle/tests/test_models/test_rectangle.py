@@ -86,3 +86,19 @@ class RectangleTest(unittest.TestCase):
         print(rec_dictionary)
         my_dect = "{'id': 1, 'width': 10, 'height': 2, 'x': 1, 'y': 9}\n"
         self.assertEqual(self.output.getvalue(), my_dect)
+
+    def test_to_json_string(self):
+        rec = Rectangle(10, 2, 1, 9)
+        rec_dictionary = rec.to_dictionary()
+        rec_list = Rectangle.to_json_string([rec_dictionary])
+        print(rec_list)
+        json_string = '[{"id": 1, "width": 10, "height": 2, "x": 1, "y": 9}]\n'
+        self.assertEqual(self.output.getvalue(), json_string)
+
+    def test_to_json_string_none(self):
+        rec = Rectangle(10, 2, 1, 9)
+        rec_dictionary = rec.to_dictionary()
+        rec_list = Rectangle.to_json_string(None)
+        print(rec_list)
+        json_string = "[]\n"
+        self.assertEqual(self.output.getvalue(), json_string)
