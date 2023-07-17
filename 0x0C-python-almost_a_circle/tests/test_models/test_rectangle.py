@@ -83,22 +83,30 @@ class RectangleTest(unittest.TestCase):
     def test_to_dictionary(self):
         rec = Rectangle(10, 2, 1, 9)
         rec_dictionary = rec.to_dictionary()
-        print(rec_dictionary)
-        my_dect = "{'id': 1, 'width': 10, 'height': 2, 'x': 1, 'y': 9}\n"
-        self.assertEqual(self.output.getvalue(), my_dect)
+        my_dect = {"id": 1, "width": 10, "height": 2, "x": 1, "y": 9}
+        self.assertEqual(rec_dictionary, my_dect)
 
     def test_to_json_string(self):
         rec = Rectangle(10, 2, 1, 9)
         rec_dictionary = rec.to_dictionary()
         rec_list = Rectangle.to_json_string([rec_dictionary])
-        print(rec_list)
-        json_string = '[{"id": 1, "width": 10, "height": 2, "x": 1, "y": 9}]\n'
-        self.assertEqual(self.output.getvalue(), json_string)
+        json_string = '[{"id": 1, "width": 10, "height": 2, "x": 1, "y": 9}]'
+        self.assertEqual(rec_list, json_string)
 
     def test_to_json_string_none(self):
-        rec = Rectangle(10, 2, 1, 9)
-        rec_dictionary = rec.to_dictionary()
         rec_list = Rectangle.to_json_string(None)
         print(rec_list)
         json_string = "[]\n"
         self.assertEqual(self.output.getvalue(), json_string)
+
+    def test_from_json_string(self):
+        list_input = [{"id": 89, "width": 10, "height": 4}]
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+        result = [{"id": 89, "width": 10, "height": 4}]
+        self.assertEqual(list_output, result)
+
+    def test_from_json_string_none(self):
+        list_output = Rectangle.from_json_string(None)
+        result = []
+        self.assertEqual(list_output, result)
