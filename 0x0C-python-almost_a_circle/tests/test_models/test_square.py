@@ -70,3 +70,32 @@ class SquareTest(unittest.TestCase):
         print(rec_dictionary)
         my_dect = "{'id': 1, 'size': 10, 'x': 2, 'y': 1}\n"
         self.assertEqual(self.output.getvalue(), my_dect)
+
+    def test_to_json_string(self):
+        """test to_json_string function"""
+        rec = Square(10, 2, 1)
+        rec_dictionary = rec.to_dictionary()
+        rec_list = Square.to_json_string([rec_dictionary])
+        json_string = '[{"id": 1, "size": 10, "x": 2, "y": 1}]'
+        self.assertEqual(rec_list, json_string)
+
+    def test_to_json_string_none(self):
+        """tests to_json_string using None"""
+        rec_list = Square.to_json_string(None)
+        print(rec_list)
+        json_string = "[]\n"
+        self.assertEqual(self.output.getvalue(), json_string)
+
+    def test_from_json_string(self):
+        """tests from_json_string function"""
+        list_input = [{"id": 89, "size": 10}]
+        json_list_input = Square.to_json_string(list_input)
+        list_output = Square.from_json_string(json_list_input)
+        result = [{"id": 89, "size": 10}]
+        self.assertEqual(list_output, result)
+
+    def test_from_json_string_none(self):
+        """tests from_json_string using None"""
+        list_output = Square.from_json_string(None)
+        result = []
+        self.assertEqual(list_output, result)
