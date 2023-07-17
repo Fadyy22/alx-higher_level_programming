@@ -10,7 +10,7 @@ class Rectangle(Base):
     """Rectangle class that inherits from Base class"""
 
     def __str__(self):
-        """string rep for the instances"""
+        """string representation of the instances"""
         id = self.id
         x = self.x
         y = self.y
