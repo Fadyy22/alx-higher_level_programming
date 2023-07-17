@@ -31,3 +31,7 @@ class BaseTest(unittest.TestCase):
         self.assertEqual(new1.id, 1)
         self.assertEqual(new2.id, 51)
         self.assertEqual(new3.id, 2)
+
+    def test_two_args(self):
+        with self.assertRaises(AttributeError):
+            new = Base(1, 2)  # type: ignore
