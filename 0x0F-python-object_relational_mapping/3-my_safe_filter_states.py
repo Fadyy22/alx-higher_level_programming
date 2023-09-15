@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""script that lists all states with a name starting with N (upper N)
-from the database hbtn_0e_0_usa"""
+"""script that takes in arguments and displays all values in the states table
+of hbtn_0e_0_usa where name matches the argument"""
 
 import MySQLdb
 import sys
@@ -15,6 +15,11 @@ if __name__ == "__main__":
     )
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name=%s", (sys.argv[4],))
-    state = cur.fetchone()
-    print(state)
+    cur.execute(
+        "SELECT * FROM states WHERE name=%s \
+        ORDER BY id ASC",
+        (sys.argv[4],),
+    )
+    states = cur.fetchall()
+    for state in states:
+        print(state)
