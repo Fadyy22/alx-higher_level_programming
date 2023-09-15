@@ -15,7 +15,10 @@ if __name__ == "__main__":
     )
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%'")
+    cur.execute(
+        "SELECT * FROM states WHERE name LIKE 'N%' \
+        ORDER BY states.id ASC"
+    )
     states = cur.fetchall()
 
     for state in states:
