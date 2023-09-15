@@ -3,7 +3,7 @@
 and an instance Base = declarative_base()
 using SQLAlchemy"""
 
-from sqlalchemy import Column, String
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 
@@ -14,5 +14,5 @@ class State(Base):
     """class state that defines a state"""
 
     __tablename__ = "states"
-    id = Column(autoincrement=True, primary_key=True)
+    id = Column(Integer, nullable=False, unique=True, primary_key=True)
     name = Column(String(128), nullable=False)
