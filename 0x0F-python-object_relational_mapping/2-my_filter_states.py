@@ -21,5 +21,6 @@ if __name__ == "__main__":
             sys.argv[4]
         )
     )
-    state = cur.fetchone()
-    print(state)
+    states = cur.fetchall()
+    for state in states:
+        print(state)
