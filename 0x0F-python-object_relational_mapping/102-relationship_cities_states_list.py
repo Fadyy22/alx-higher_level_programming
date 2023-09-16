@@ -15,6 +15,5 @@ if __name__ == "__main__":
     session = Session()
 
     cities = session.query(City).outerjoin(State).order_by(City.id).all()
-    print(cities)
     for city in cities:
         print(f"{city.id}: {city.name} -> {city.state.name}")
