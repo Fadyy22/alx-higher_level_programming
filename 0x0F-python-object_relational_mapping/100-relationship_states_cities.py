@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """script that prints all City objects from the database hbtn_0e_14_usatou"""
 
-from os import name
-import stat
 from relationship_state import Base, State
 from relationship_city import City
 from sqlalchemy.orm import sessionmaker
