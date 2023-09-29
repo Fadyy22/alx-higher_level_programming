@@ -7,12 +7,17 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    url = f"https://api.github.com/repos/{sys.argv[2]}/{sys.argv[1]}/commits"
+    try:
+        repo = sys.argv[1]
+        owner = sys.argv[2]
+        url = f"https://api.github.com/repos/{owner}/{repo}/commits"
 
-    res = requests.get(url)
+        res = requests.get(url)
 
-    for i in range(10):
-        commit = res.json()[i]
-        sha = commit.get("sha")
-        name = commit.get("commit").get("author").get("name")
-        print(f"{sha}: {name}")
+        for i in range(10):
+            commit = res.json()[i]
+            sha = commit.get("sha")
+            name = commit.get("commit").get("author").get("name")
+            print(f"{sha}: {name}")
+    except Exception:
+        pass
