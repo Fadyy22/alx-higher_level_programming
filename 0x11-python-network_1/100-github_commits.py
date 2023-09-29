@@ -15,4 +15,4 @@ if __name__ == "__main__":
         commit = res.json()[i]
         sha = commit.get("sha")
         name = commit.get("commit").get("author").get("name")
-        print(f"{sha} {name}")
+        print(f"{sha}: {name}")
