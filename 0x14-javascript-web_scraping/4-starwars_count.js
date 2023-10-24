@@ -11,7 +11,7 @@ request.get(api, (err, res, body) => {
     const results = JSON.parse(body).results;
     for (const movie of results) {
       for (const character of movie.characters) {
-        if (character == 'https://swapi-api.alx-tools.com/api/people/18/') {
+        if (character.search('18') > 0) {
           noMovies += 1;
         }
       }
