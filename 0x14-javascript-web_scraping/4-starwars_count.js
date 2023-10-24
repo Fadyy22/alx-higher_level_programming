@@ -9,9 +9,10 @@ request.get(api, (err, res, body) => {
     console.log(err);
   } else {
     const results = JSON.parse(body).results;
-    for (const movie of results) {
-      for (const character of movie.characters) {
-        if (character === 'https://swapi-api.alx-tools.com/api/people/18/') {
+    for (let i = 0; i < results.length; i++) {
+      const characters = results[i].characters;
+      for (let j = 0; j < characters.length; j++) {
+        if (characters[j].search('2') > 0) {
           noMovies += 1;
         }
       }
