@@ -9,10 +9,9 @@ request.get(api, (err, res, body) => {
     console.log(err);
   } else {
     const results = JSON.parse(body).results;
-    for (let i = 0; i < results.length; i++) {
-      const characters = results[i].characters;
-      for (let j = 0; j < characters.length; j++) {
-        if (characters[j].search('18') > 0) {
+    for (const movie of results) {
+      for (const character of movie.characters) {
+        if (character.search('18') > 0) {
           noMovies += 1;
         }
       }
