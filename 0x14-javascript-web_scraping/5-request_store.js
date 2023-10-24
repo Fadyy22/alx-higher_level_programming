@@ -2,7 +2,7 @@
 const fs = require('fs');
 const request = require('request');
 
-const api = process.argv[2]
+const api = process.argv[2];
 
 request(api, (err, res, body) => {
   if (err) {
