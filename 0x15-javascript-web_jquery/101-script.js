@@ -9,4 +9,4 @@ window.onload = () => {
   $('DIV#clear_list').click(() => {
     $('UL.my_list').children().remove();
   });
-}
+};
